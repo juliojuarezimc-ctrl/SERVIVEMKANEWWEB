@@ -1,6 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Menú Hamburguesa
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -21,25 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Intersection Observer para animaciones al hacer Scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // El 15% del elemento debe ser visible para activarse
-    };
-
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Añade la clase 'visible' para detonar el CSS
                 entry.target.classList.add('visible');
-                // Opcional: dejar de observar después de la primera vez
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Selecciona todos los elementos con la clase 'scroll-reveal'
     const revealElements = document.querySelectorAll('.scroll-reveal');
     revealElements.forEach(el => observer.observe(el));
 });
