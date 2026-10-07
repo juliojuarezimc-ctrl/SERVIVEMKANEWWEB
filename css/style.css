@@ -1,13 +1,11 @@
 
 :root {
-    /* Colores exactos de la imagen */
     --primary: #0a1c4a;        
     --primary-light: #16327a;  
     --secondary: #ffd600;      
     --bg-gray: #f8f9fa;        
     --white: #ffffff;
     
-    /* Colores de servicios */
     --blue: #1c5fc9;
     --dark: #0a1c4a;
     --green: #209955;
@@ -25,15 +23,14 @@ ul { list-style: none; }
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 .section-padding { padding: 4rem 0; }
 
-/* Tipografía de Utilidad */
 .text-yellow { color: var(--secondary) !important; }
 .text-blue { color: var(--blue) !important; }
 .text-dark { color: var(--dark) !important; }
+.text-primary { color: var(--primary) !important; }
 .text-green { color: var(--green) !important; }
 .text-red { color: var(--red) !important; }
 .big-text { font-size: 1.3em; font-weight: 800; line-height: 0.9; display: inline-block; margin: 5px 0;}
 
-/* Botones */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; }
 .btn-yellow { background-color: var(--secondary); color: var(--primary); }
 .btn-yellow:hover { background-color: #e6c100; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255, 214, 0, 0.3); }
@@ -42,11 +39,9 @@ ul { list-style: none; }
 .btn-nav { background-color: var(--secondary); color: var(--primary); padding: 8px 20px; font-size: 0.9rem; }
 .w-100 { width: 100%; }
 
-/* Píldoras (Badges) */
 .pill-dark { background-color: var(--primary); color: var(--white); padding: 6px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
 .pill-yellow { background-color: var(--secondary); color: var(--primary); padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
 
-/* Navegación */
 .navbar { background-color: var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background-color 0.3s; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 .logo img { height: 50px; transition: transform 0.3s; }
@@ -58,7 +53,11 @@ ul { list-style: none; }
 .nav-links a:hover { color: var(--secondary); }
 .hamburger { display: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
 
-/* HERO SECTION */
+/* NUEVO: Header para páginas secundarias (Catálogo) */
+.page-header { background-color: var(--primary); color: var(--white); padding: 4rem 0 3rem 0; text-align: center; border-bottom: 5px solid var(--secondary); }
+.page-header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; }
+.page-header p { font-size: 1.1rem; font-weight: 300; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
 .hero { background-color: var(--primary); color: var(--white); position: relative; padding: 4rem 0 6rem 0; overflow: hidden; display: flex; align-items: center; }
 .hero-bg-pattern { position: absolute; left: 10%; top: 20%; width: 200px; height: 200px; background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px); background-size: 20px 20px; z-index: 1; animation: spin-slow 40s linear infinite; }
 .hero-swoosh { position: absolute; bottom: -5px; right: -5%; width: 60%; height: 250px; background-color: var(--secondary); border-top-left-radius: 100% 250px; z-index: 1; }
@@ -75,13 +74,11 @@ ul { list-style: none; }
 .h-badge:hover { transform: translateY(-3px) scale(1.05); }
 .h-badge i { color: var(--secondary); font-size: 1.5rem; }
 
-/* Imagen del Hero y Círculo */
 .hero-image-wrapper { width: 45%; position: relative; display: flex; justify-content: flex-end; }
 .tools-image { width: 100%; max-width: 450px; height: 450px; background: url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover; border-radius: 20px 20px 20px 100px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); z-index: 2; transition: transform 0.5s ease; }
 .tools-image:hover { transform: scale(1.03); }
 .yellow-grid-overlay { position: absolute; top: 0; right: 0; width: 60%; height: 60%; background-color: rgba(255, 214, 0, 0.4); clip-path: polygon(100% 0, 100% 100%, 0 0); }
 
-/* Círculo Blanco Superpuesto */
 .services-circle { position: absolute; bottom: 10%; left: -20px; width: 220px; height: 220px; background-color: var(--white); border: 6px solid var(--secondary); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: box-shadow 0.3s; }
 .services-circle:hover { box-shadow: 0 15px 35px rgba(255, 214, 0, 0.4); }
 .services-circle ul { padding: 0; text-align: left; }
@@ -92,19 +89,18 @@ ul { list-style: none; }
 .services-circle li.c-green, .services-circle li.c-green::before { color: var(--green); }
 .services-circle li.c-red, .services-circle li.c-red::before { color: var(--red); }
 
-/* Encabezados de Sección */
 .section-header { text-align: center; margin-bottom: 3rem; }
 .section-header h2 { color: var(--primary); font-size: 2rem; font-weight: 700; }
 
-/* Grid de Servicios */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-.service-card { background: var(--white); padding: 40px 20px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: all 0.4s ease; cursor: pointer; }
+.service-card { background: var(--white); padding: 40px 20px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: all 0.4s ease; cursor: pointer; display:block; }
 .service-card:hover { transform: translateY(-15px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.1); }
 .icon-circle { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; font-size: 2.5rem; color: var(--white); transition: transform 0.5s ease; }
 .bg-blue { background-color: var(--blue); }
 .bg-yellow { background-color: var(--secondary); }
 .bg-green { background-color: var(--green); }
 .bg-red { background-color: var(--red); }
+.bg-dark { background-color: var(--dark); }
 .service-card:hover .icon-spin-hover { transform: rotate(360deg); }
 .service-card:hover .icon-pulse-hover { animation: pulse 1s infinite; }
 .service-card:hover .icon-shake-hover { animation: shake 0.5s; }
@@ -113,7 +109,6 @@ ul { list-style: none; }
 .link-more { font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.3s; }
 .service-card:hover .link-more { gap: 10px; }
 
-/* Grid de Características */
 .features { border-top: 1px solid #eaeaea; }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
 .f-icon { margin-bottom: 15px; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -124,7 +119,6 @@ ul { list-style: none; }
 .feature-item:hover h3 { color: var(--secondary); }
 .feature-item p { font-size: 0.85rem; color: var(--text-light); padding: 0 10px; }
 
-/* Formulario de Contacto */
 .contact-box { background-color: var(--primary); border-radius: 20px; padding: 40px; display: flex; gap: 30px; color: var(--white); box-shadow: 0 20px 50px rgba(10, 28, 74, 0.3); }
 .contact-col-1 { flex: 1; border-right: 1px solid rgba(255,255,255,0.2); padding-right: 30px; }
 .contact-col-1 h2 { font-size: 2rem; font-weight: 700; line-height: 1.1; margin-bottom: 15px; }
@@ -144,14 +138,9 @@ ul { list-style: none; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 12px 15px; border-radius: 8px; border: none; font-size: 0.9rem; font-family: 'Poppins', sans-serif; background-color: var(--white); transition: all 0.3s; box-shadow: inset 0 0 0 2px transparent; }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; box-shadow: inset 0 0 0 2px var(--secondary); transform: translateY(-2px); }
 
-/* Footer */
 footer { background-color: #05102d; color: var(--white); text-align: center; padding: 20px 0; font-size: 0.85rem; font-weight: 300; }
 
-/* ============================================================
-   CLASES DE ANIMACIÓN PERSONALIZADAS
-============================================================ */
-
-/* Animaciones al cargar la página (Hero) */
+/* Animaciones */
 .animate-fade-down { animation: fadeDown 0.8s ease-out forwards; }
 .slide-in-left { animation: slideInLeft 1s ease-out forwards; }
 .slide-in-right { animation: slideInRight 1.2s ease-out forwards; }
@@ -161,77 +150,32 @@ footer { background-color: #05102d; color: var(--white); text-align: center; pad
 .float-anim { animation: float 6s ease-in-out infinite; }
 .pulse-text { animation: subtlePulse 3s infinite; }
 
-/* Animaciones de scroll (JavaScript) */
 .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 .scale-up { transform: scale(0.95); }
 .scale-up.visible { transform: scale(1); }
 
-/* Delay para los elementos en grid (Stagger) */
 .stagger-1 { transition-delay: 0.1s; }
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 
-/* Hover utilities */
 .btn-hover-shake:hover { animation: shake 0.5s; }
 .pulse-pill { animation: pulseBg 2s infinite; }
 
-/* Keyframes */
-@keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(100px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes growWidth {
-    from { width: 0; }
-    to { width: 50px; }
-}
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-}
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-@keyframes pulseBg {
-    0% { box-shadow: 0 0 0 0 rgba(255, 214, 0, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 214, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 214, 0, 0); }
-}
-@keyframes spin-slow {
-    100% { transform: rotate(360deg); }
-}
-@keyframes subtlePulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-}
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes growWidth { from { width: 0; } to { width: 50px; } }
+@keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 75% { transform: translateX(-5px); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes pulseBg { 0% { box-shadow: 0 0 0 0 rgba(255, 214, 0, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(255, 214, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 214, 0, 0); } }
+@keyframes spin-slow { 100% { transform: rotate(360deg); } }
+@keyframes subtlePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
 
-/* Responsive */
 @media (max-width: 992px) {
     .hero-container { flex-direction: column; text-align: center; }
     .hero-content { width: 100%; padding-right: 0; }
