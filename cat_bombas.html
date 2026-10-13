@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- NAVEGACIÓN -->
     <nav class="navbar animate-fade-down">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -23,28 +24,93 @@
         </div>
     </nav>
 
+    <!-- CABECERA -->
     <header class="page-header">
         <div class="container">
             <h1><a href="catalogo.html" style="color:var(--secondary); font-size:0.6em; text-decoration:none;"><i class="fas fa-arrow-left"></i> Volver al Catálogo</a><br>Catálogo: Bombas</h1>
         </div>
     </header>
 
+    <!-- GALERÍA DE PRODUCTOS -->
     <section class="section-padding" style="min-height: 50vh;">
-        <div class="container" style="text-align: center;">
-            <!-- AQUÍ ALOJARÁS LAS IMÁGENES DE TUS PRODUCTOS -->
-            <div style="border: 2px dashed #ccc; padding: 50px; border-radius: 15px; color: #777;">
-                <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 15px; color:#ccc;"></i>
-                <h2>Área de galería para Bombas</h2>
-                <p>Aquí insertarás las imágenes de tus productos posteriormente.</p>
+        <div class="container">
+            
+            <div class="product-grid">
+                
+                <!-- PRODUCTO 1: Bomba GRANDFAR -->
+                <div class="product-card scroll-reveal stagger-1">
+                    <div class="product-image-container">
+                        <!-- LA IMAGEN SE LLAMARÁ: bomba-grandfar-1hp.jpg -->
+                        <img src="assets/img/bomba-grandfar-1hp.jpg" alt="Bomba de Agua GRANDFAR 1.0 HP" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/f8f9fa/0a1c4a?text=Bomba+GRANDFAR+1.0+HP'">
+                    </div>
+                    
+                    <div class="product-info">
+                        <h3 class="product-title text-primary">Bomba de Agua Periférica GRANDFAR 1.0 HP</h3>
+                        <p class="product-model">Modelo: CPm158 (Versión K2)</p>
+                        
+                        <!-- BOTÓN DESPLEGABLE -->
+                        <button class="btn-toggle-details" onclick="toggleDetails('details-1')">
+                            Ver características <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <!-- CONTENIDO DESPLEGABLE (OCULTO POR DEFECTO) -->
+                        <div id="details-1" class="product-details-content">
+                            <ul class="specs-list">
+                                <li><i class="fas fa-bolt text-yellow"></i> <strong>Potencia:</strong> 1.0 HP (0.75 kW)</li>
+                                <li><i class="fas fa-plug text-dark"></i> <strong>Voltaje/Amperaje:</strong> 110 V / 12.2 A</li>
+                                <li><i class="fas fa-water text-blue"></i> <strong>Caudal Máx (Q. max):</strong> 110 L/min</li>
+                                <li><i class="fas fa-arrow-up text-green"></i> <strong>Altura Máx (H. max):</strong> 37.5 m</li>
+                                <li><i class="fas fa-level-down-alt text-red"></i> <strong>Succión Máx (Suct H):</strong> 7 m</li>
+                                <li><i class="fas fa-tachometer-alt text-primary"></i> <strong>Velocidad:</strong> 3450 r.p.m (60 Hz)</li>
+                                <li><i class="fas fa-ruler-combined text-dark"></i> <strong>Conexión (Size):</strong> 1" x 1"</li>
+                                <li><i class="fas fa-shield-alt text-yellow"></i> <strong>Protección:</strong> IP 44 (Protección térmica)</li>
+                            </ul>
+                            <a href="https://wa.me/584243669016?text=Hola%20SERVIVEMKA,%20estoy%20interesado%20en%20la%20Bomba%20GRANDFAR%20de%201.0%20HP%20(Modelo%20CPm158).%20%C2%BFMe%20pueden%20dar%20precio%20y%20disponibilidad?" target="_blank" class="btn btn-yellow w-100 mt-3">
+                                <i class="fab fa-whatsapp"></i> Consultar precio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN PRODUCTO 1 -->
+
+                <!-- ESPACIO PARA FUTURAS BOMBAS -->
+                <!-- Puedes copiar y pegar el bloque de arriba para añadir más bombas -->
+
             </div>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>© 2024 SERVIVEMKA 2618 CA. Todos los derechos reservados. &nbsp;|&nbsp; J-50320655-1</p>
         </div>
     </footer>
+
+    <!-- SCRIPT PARA EL DESPLEGABLE DE PRODUCTOS -->
+    <script>
+        // Función para abrir/cerrar detalles de productos
+        function toggleDetails(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.style.maxHeight) {
+                // Cerrar
+                content.style.maxHeight = null;
+                content.classList.remove('active');
+                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                button.classList.remove('active-btn');
+            } else {
+                // Abrir
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add('active');
+                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                button.classList.add('active-btn');
+            }
+        }
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
