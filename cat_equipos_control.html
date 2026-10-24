@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo: Equipos de Control | SERVIVEMKA 2618 CA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar animate-fade-down">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-servivemka.jpg" alt="SERVIVEMKA 2618 CA" onerror="this.src='https://via.placeholder.com/220x60/0a1c4a/ffffff?text=SERVIVEMKA+LOGO'">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="active">Catálogo</a></li>
+            </ul>
+            <a href="index.html#contacto" class="btn btn-nav"><i class="fas fa-phone-alt"></i> Contáctanos</a>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- CABECERA -->
+    <header class="page-header">
+        <div class="container">
+            <h1><a href="catalogo.html" style="color:var(--secondary); font-size:0.6em; text-decoration:none;"><i class="fas fa-arrow-left"></i> Volver al Catálogo</a><br>Equipos de Control</h1>
+        </div>
+    </header>
+
+    <!-- GALERÍA DE PRODUCTOS -->
+    <section class="section-padding" style="min-height: 50vh;">
+        <div class="container">
+            
+            <div class="product-grid">
+                
+                <!-- PRODUCTO 1: Control Automático GRANDFAR -->
+                <div class="product-card scroll-reveal stagger-1">
+                    <div class="product-image-container">
+                        <!-- LA IMAGEN SE LLAMARÁ: control-grandfar-gf20.jpg -->
+                        <img src="assets/img/control-grandfar-gf20.jpg" alt="Control Automático de Bomba GRANDFAR" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/f8f9fa/0a1c4a?text=Control+GRANDFAR'">
+                    </div>
+                    
+                    <div class="product-info">
+                        <h3 class="product-title text-primary">Control Automático de Bomba GRANDFAR</h3>
+                        <p class="product-model">Modelo: GFAm20 V3-M1</p>
+                        
+                        <!-- BOTÓN DESPLEGABLE -->
+                        <button class="btn-toggle-details" onclick="toggleDetails('details-1')">
+                            Ver características <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <!-- CONTENIDO DESPLEGABLE -->
+                        <div id="details-1" class="product-details-content">
+                            <ul class="specs-list">
+                                <li><i class="fas fa-plug text-dark"></i> <strong>Voltaje:</strong> 90V - 260V AC (50/60 Hz)</li>
+                                <li><i class="fas fa-bolt text-yellow"></i> <strong>Potencia Máx:</strong> 0.1 - 2.2 kW</li>
+                                <li><i class="fas fa-tachometer-alt text-blue"></i> <strong>Presión Máx:</strong> 10 bar</li>
+                                <li><i class="fas fa-arrow-up text-green"></i> <strong>Presión de Arranque:</strong> 1.0 bar</li>
+                                <li><i class="fas fa-temperature-high text-red"></i> <strong>Temperatura Máx:</strong> 80 °C</li>
+                                <li><i class="fas fa-microchip text-primary"></i> <strong>Corriente Máx:</strong> 10 A</li>
+                                <li><i class="fas fa-sliders-h text-dark"></i> <strong>Ajuste:</strong> Panel de control (+ UP / - DOWN)</li>
+                                <li><i class="fas fa-exclamation-triangle text-yellow"></i> <strong>Protección:</strong> Indicador de falta de agua (Flash)</li>
+                            </ul>
+                            <a href="https://wa.me/584243669016?text=Hola%20SERVIVEMKA,%20estoy%20interesado%20en%20el%20Control%20Autom%C3%A1tico%20de%20Bomba%20GRANDFAR%20(Modelo%20GFAm20%20V3-M1).%20%C2%BFMe%20pueden%20dar%20precio%20y%20disponibilidad?" target="_blank" class="btn btn-yellow w-100 mt-3">
+                                <i class="fab fa-whatsapp"></i> Consultar precio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN PRODUCTO 1 -->
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2024 SERVIVEMKA 2618 CA. Todos los derechos reservados. &nbsp;|&nbsp; J-50320655-1</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA EL DESPLEGABLE DE PRODUCTOS -->
+    <script>
+        function toggleDetails(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove('active');
+                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                button.classList.remove('active-btn');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add('active');
+                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                button.classList.add('active-btn');
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
